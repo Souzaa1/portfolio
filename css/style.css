@@ -14,7 +14,8 @@
     --bg-color: #0F0F0F;
     --second-bg-color: #3b3b3b;
     --text-color: white;
-    --main-color: #1c8a6a;
+    --main-color: #9e001a;
+    /* --main-color: #29FFC2; */
 }
 
 html{
@@ -399,7 +400,7 @@ span {
 }
 
 .projects-box .projects-info:hover {
-    background: radial-gradient(rgba(41, 255, 194, 0.8), var(--main-color));
+    background: radial-gradient(rgba(158, 0, 26, 0.8), var(--main-color));
     transform: scale(1.1);
 }
 
