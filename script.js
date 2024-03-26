@@ -1,27 +1,23 @@
-let meuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar-container');
+var iconSun = document.getElementById('iconSun');
+var iconMoon = document.getElementById('iconMoon');
 
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header-container nav a');
+// Inicia com o ícone do sol visível e o ícone da lua invisível
+iconSun.style.display = 'block';
+iconMoon.style.display = 'none';
 
-window.onscroll = () => {
-
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header-container nav a[href*=' + id + ' ]').classList.add('active');
-            });
-        }
-    });
+iconSun.onclick = function () {
+    document.body.classList.toggle('light-theme');
+    if (document.body.classList.contains('light-theme')) {
+        iconSun.style.display = 'none'; // Esconde o ícone do sol
+        iconMoon.style.display = 'block'; // Mostra o ícone da lua
+    } else {
+        iconSun.style.display = 'block'; // Mostra o ícone do sol
+        iconMoon.style.display = 'none'; // Esconde o ícone da lua
+    }
 }
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+iconMoon.onclick = function () {
+    document.body.classList.remove('light-theme');
+    iconSun.style.display = 'block'; // Mostra o ícone do sol
+    iconMoon.style.display = 'none'; // Esconde o ícone da lua
 }
